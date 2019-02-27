@@ -2,15 +2,26 @@ const test = QUnit.test;
 
 QUnit.module('CREATE DA TABLE');
 
-function createTableTemplate() {
-    return `
+const contacts = {
+    isActive: 'Yes',
+    firstName: 'Conner',
+    lastName: 'Chad',
+    company: 'Chad, Inc.'
+};
+
+function createTableTemplate(contacts) {
+    const html = /*html*/`
     <tr>
-        <td>Yes</td>
-        <td>Conner</td>
-        <td>Chad</td>
-        <td>Chad, Inc.</td>
+        <td>${contacts.isActive}</td>
+        <td>${contacts.firstName}</td>
+        <td>${contacts.lastName}</td>
+        <td>${contacts.company}</td>
     </tr>
     `;
+    const template = document.createElement('template');
+    template.innerHTML = html;
+    const dom = template.content;
+    return dom;
 }
 
 test('dynamically generate table rows from contacts', assert => {
@@ -25,8 +36,9 @@ test('dynamically generate table rows from contacts', assert => {
     `;
 
     //act
-    const result = createTableTemplate();
+    const dom = createTableTemplate(contacts);
 
     //assert
-    assert.equal(result, expected);
+    assert.htmlEqual(dom, expected);
 });
+
