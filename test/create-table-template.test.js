@@ -3,7 +3,7 @@ const test = QUnit.test;
 QUnit.module('CREATE DA TABLE');
 
 const contacts = {
-    isActive: 'Yes',
+    isActive: false,
     firstName: 'Conner',
     lastName: 'Chad',
     company: 'Chad, Inc.'
@@ -12,7 +12,7 @@ const contacts = {
 function createTableTemplate(contacts) {
     const html = /*html*/`
     <tr>
-        <td>${contacts.isActive}</td>
+        <td>${contacts.isActive ? 'Yes' : 'No' }</td>
         <td>${contacts.firstName}</td>
         <td>${contacts.lastName}</td>
         <td>${contacts.company}</td>
@@ -28,7 +28,7 @@ test('dynamically generate table rows from contacts', assert => {
     //arrange
     const expected = `
     <tr>
-        <td>Yes</td>
+        <td>No</td>
         <td>Conner</td>
         <td>Chad</td>
         <td>Chad, Inc.</td>
