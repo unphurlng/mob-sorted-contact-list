@@ -18,6 +18,11 @@ export function createTableTemplate(contacts) {
 
 
 // loadContacts default export function
+const tableBody = document.getElementById('table-body');
+
 export default function loadContacts(contacts) {
-    console.log(contacts);
+    contacts.forEach(contact => {
+        const dom = createTableTemplate(contact);
+        tableBody.appendChild(dom);
+    });
 }
