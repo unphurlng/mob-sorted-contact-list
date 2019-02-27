@@ -1,0 +1,15 @@
+/* font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif; */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif'
+}
+
+header {
+    font-family: 'Roboto', sans-serif;
+}
+
