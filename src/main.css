@@ -14,3 +14,22 @@ header {
 h1 {
     margin-left: 20px;
 }
+
+table {
+    width: 500px;
+    border: solid black; 
+    border-collapse: collapse;
+}
+
+th {
+    background: white;
+    border-bottom: solid black 2px;
+}
+
+tr:nth-child(odd) {
+    background-color: gray;
+}
+
+td {
+    text-align: center;
+}
