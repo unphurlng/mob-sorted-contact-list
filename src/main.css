@@ -26,7 +26,7 @@ th {
     border-bottom: solid black 2px;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {
     background-color: gray;
 }
 
