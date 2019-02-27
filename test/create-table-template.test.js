@@ -1,3 +1,4 @@
+import { createTableTemplate } from '../src/load-contacts.js';
 const test = QUnit.test;
 
 QUnit.module('CREATE DA TABLE');
@@ -8,21 +9,6 @@ const contacts = {
     lastName: 'Chad',
     company: 'Chad, Inc.'
 };
-
-function createTableTemplate(contacts) {
-    const html = /*html*/`
-    <tr>
-        <td>${contacts.isActive ? 'Yes' : 'No' }</td>
-        <td>${contacts.firstName}</td>
-        <td>${contacts.lastName}</td>
-        <td>${contacts.company}</td>
-    </tr>
-    `;
-    const template = document.createElement('template');
-    template.innerHTML = html;
-    const dom = template.content;
-    return dom;
-}
 
 test('dynamically generate table rows from contacts', assert => {
     //arrange

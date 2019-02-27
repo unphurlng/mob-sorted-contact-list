@@ -1,4 +1,4 @@
 import contacts from '../data/contacts.js';
+import loadContacts from './load-contacts.js';
 
-// eslint-disable-next-line no-console
-console.log(contacts);
+loadContacts(contacts);
