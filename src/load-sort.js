@@ -2,10 +2,10 @@ const sortSelectContainer = document.getElementById('sort-select');
 
 
 
-export default function loadSort() {
+export default function loadSort(callback) {
     sortSelectContainer.addEventListener('change', () => {
         const sortSelected = { property: sortSelectContainer.value };
-        console.log(sortSelected);
+        callback(sortSelected);
     });
 }
 

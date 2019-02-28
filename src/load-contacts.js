@@ -21,8 +21,15 @@ export function createTableTemplate(contacts) {
 const tableBody = document.getElementById('table-body');
 
 export default function loadContacts(contacts) {
+    clearRows();
     contacts.forEach(contact => {
         const dom = createTableTemplate(contact);
         tableBody.appendChild(dom);
     });
+}
+
+function clearRows() {
+    while(tableBody.children.length > 0) {
+        tableBody.lastElementChild.remove();
+    }
 }
