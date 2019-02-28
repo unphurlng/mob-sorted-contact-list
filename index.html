@@ -12,6 +12,15 @@
     <header><h1>Sorted Contacts</h1></header>
 
     <main>
+        <p>Sort By:
+            <select id="sort-select">
+                <option value="" disabled selected></option>
+                <option value="isActive">Active</option>
+                <option value="firstName">First name</option>
+                <option value="lastName">Last Name</option>
+                <option value="company">Company</option>
+            </select>
+        </p>
         <table>
             <thead>
                 <tr>
@@ -21,8 +30,7 @@
                     <th>Company</th>
                 </tr>
             </thead>
-            <tbody id="table-body">
-            </tbody>
+            <tbody id="table-body"></tbody>
         </table>
     </main>
     <script type="module" src="./src/index.js"></script>
